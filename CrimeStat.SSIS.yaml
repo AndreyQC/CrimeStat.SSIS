@@ -1,0 +1,20 @@
+---
+Steps:
+- StepName: Download files from WordBank
+  - Source : WordBank
+  -  result: downloaded files
+- StepName: Download files from UNDoc
+
+  -  result: downloaded files
+- StepName: Download data from files to staging area for WordBank
+
+  substeps:
+    - substapename: Deal with problem
+    
+  reqiured : DWH
+
+
+- StepName: Download data from files to staging area for UNDoc
+
+- StepName: Transform data and load to Data Mart for UNDoc
+- StepName: Transform data and load to Data Mart for WordBank
