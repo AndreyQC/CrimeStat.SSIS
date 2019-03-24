@@ -1,0 +1,67 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/24/2019 7:29:20 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EPRUSARW1710"
+  DTS:CreatorName="SARATOV\Andrey_Potapov"
+  DTS:DTSID="{DF10AFCB-D529-431F-B4C7-B668AF830EE6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Prepare_Countries"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{9124A73A-3846-4EAD-A392-2D55BE4C6A29}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[svodspec]"
+      DTS:CreationName="AzureStorage"
+      DTS:DTSID="{24CE88BF-11ED-4E57-BBEC-E6E339AD0699}"
+      DTS:ObjectName="svodspec">
+      <DTS:ObjectData>
+        <AzureStorageConnectionManager
+          ConnectionString="DefaultEndpointsProtocol=https;AccountName=svodspec;EndpointSuffix=core.windows.net">
+          <AccountKey
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALxSaQ1rkvU2YdpVHoBYDrwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABtaTkTs5bjd6w96XMSIBviAAAAAASAAACgAAAAEAAAABhrJVHFRJepspwVCuh328G4AAAA1JgoZRItWQOIusgowOGZMIKFJj9DeGAOYmZUxKdmEkFSPJGiXUkAQ2cXMe7TgEXgicKVJoltUEeWlaS4gLZ5GXWNZKdBqvSzrVCgclfliifNVOZa+RmaDFG/CP+PyQosHmM+vxV8ssQCNUdS73+ULbdF+KVyyB9+6Y11PSfoJAKmWQgWeczq0k9XI3nA5k8d6boCB2TDTkHphDFR5m0tIocykUBQPLMH77n4v9rCWi4rK04qGmWMcRQAAAAMytTvyxurzC8IfQaqm3Ii7DmOnw</AccountKey>
+        </AzureStorageConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <AnnotationLayout
+          Text="Prepare_Countries.dtsx&#xA;TODO&#xA;- load file with ISO data fron GitBub to working directory&#xD;&#xA;- parametrise&#xA;"
+          ParentId="Package"
+          Size="304,90"
+          Id="21786142-2626-4fb4-a39c-27c88477571b"
+          TopLeft="535,8">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Color="#FFF1F1F1">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

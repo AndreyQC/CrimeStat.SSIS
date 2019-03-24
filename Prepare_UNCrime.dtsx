@@ -1,0 +1,112 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/24/2019 7:29:20 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EPRUSARW1710"
+  DTS:CreatorName="SARATOV\Andrey_Potapov"
+  DTS:DTSID="{649DA41D-E8DE-44E0-AD35-C9CF76D0133F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Prepare_UNCrime"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{F561C840-CC8A-48E1-82A9-88834EB0EFA3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[svodspec]"
+      DTS:CreationName="AzureStorage"
+      DTS:DTSID="{2A44E763-2D27-4ACA-B4E2-EF35A888602C}"
+      DTS:ObjectName="svodspec">
+      <DTS:ObjectData>
+        <AzureStorageConnectionManager
+          ConnectionString="DefaultEndpointsProtocol=https;AccountName=svodspec;EndpointSuffix=core.windows.net">
+          <AccountKey
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALxSaQ1rkvU2YdpVHoBYDrwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB07CddBrX1446senge59BbAAAAAASAAACgAAAAEAAAANXHkGy0EmsjtNsvjz+FUlm4AAAAx/Tl2BrxGXJLNvbSGj8pMcGMeBMO8+ggC67rTtcvDzwkJkz0myBvxUaxKvHebOhhQGa3GtjMkL9cg9fNLH8WXtZtsof7Avy82EflDKH3kNwXk3nhmMh4CMpUpPuX8Jwu+ExdE9mcvNjpyEUrLsC1548PXutP3cylr7BBKhaxWWjryRMPLuWsHFprGjjIo+fZyxjv1039BlqGiK8nxnNlygZHc8pwYjE/M2cefzpn4kRHbJzu0hTdsBQAAAAjRZFLUc/rnLXQeoBStp9hdaGVZA</AccountKey>
+        </AzureStorageConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC Copy UNCrime data from BLOB"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7301ACFC-A7B9-41E1-95D0-37E011F846F5}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC Copy UNCrime data from BLOB">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Copy UNCrime data from BLOB\ABDT Copy UNCrime files to working folder"
+          DTS:CreationName="CopyFromBlobTask"
+          DTS:Description="Azure Blob Download Task"
+          DTS:DTSID="{2FAA6C35-0FCC-4275-A775-796AE18EF721}"
+          DTS:ExecutableType="CopyFromBlobTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ABDT Copy UNCrime files to working folder"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CopyFromBlobTask
+              ConnectionId="{2A44E763-2D27-4ACA-B4E2-EF35A888602C}"
+              BlobContainer="crimestatisticsources"
+              BlobDirectory="uncrimesource/"
+              LocalDirectory="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.UNCrime"
+              FileNameFilter="*"
+              TimeRangeFrom="1/1/1900 12:00:00 AM +04:00"
+              TimeRangeTo="12/31/2200 12:00:00 AM +04:00" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="282,42"
+          Id="Package\SEQC Copy UNCrime data from BLOB\ABDT Copy UNCrime files to working folder"
+          TopLeft="47,69" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="370,255"
+          Size="370,298"
+          Id="Package\SEQC Copy UNCrime data from BLOB"
+          TopLeft="142,100" />
+        <AnnotationLayout
+          Text="Prepare_UNCrime.dtsx&#xD;&#xA;Copy data from BLOB storage to working folder for WorlBank file&#xD;&#xA;TODO&#xD;&#xA; • Parametrize &#xD;&#xA;"
+          ParentId="Package"
+          Size="344,90"
+          Id="21786142-2626-4fb4-a39c-27c88477571b"
+          TopLeft="535,8">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Color="#FFF1F1F1">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

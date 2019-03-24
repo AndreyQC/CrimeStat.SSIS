@@ -1,0 +1,112 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/24/2019 7:29:20 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EPRUSARW1710"
+  DTS:CreatorName="SARATOV\Andrey_Potapov"
+  DTS:DTSID="{3717BE35-F4E6-43F3-9C01-AC0CED15C6F3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Prepare_WorldBank"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{A5E3BC75-033A-42AF-905A-16C594BE037C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[svodspec]"
+      DTS:CreationName="AzureStorage"
+      DTS:DTSID="{DEB0949C-0A5C-4CB6-911F-A0C9028DBEA2}"
+      DTS:ObjectName="svodspec">
+      <DTS:ObjectData>
+        <AzureStorageConnectionManager
+          ConnectionString="DefaultEndpointsProtocol=https;AccountName=svodspec;EndpointSuffix=core.windows.net">
+          <AccountKey
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALxSaQ1rkvU2YdpVHoBYDrwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACj2pdBj6zXusEcPQoirWWhAAAAAASAAACgAAAAEAAAAHjp3oMNmNrZLZ0z+76W/Ha4AAAA6S/8TB3oV+Omr3hUkdyM0OeE7RXBcqjiVYIUFXUEDlM7K2KD4k2F2QFep0w8JW0TXVb53EMqKdGE9T7AzmdFkpjuCFxmX/rhWVFg2boHcwQF15lb4HFiIyvsdhibXf8Jumg5NItzxC/Xc3H/+ehrHf+PmSH+VKSu8YsViE4PLpQNOVZnAx5de2e8Bu/GeWMXDP4UxtN8kJmzz6IWdyoA2jfKwH1YO3eRHsn3FlAVxIVjMM+7crDnuxQAAADffyXqbqmxxOTcQjFsVpnYkZJfpA</AccountKey>
+        </AzureStorageConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC Copy WorldBank data from BLOB"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{A352E7D2-4C75-470E-8C1D-F10C588F049C}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC Copy WorldBank data from BLOB">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Copy WorldBank data from BLOB\ABDT Copy WorldBank file to working folder"
+          DTS:CreationName="CopyFromBlobTask"
+          DTS:Description="Azure Blob Download Task"
+          DTS:DTSID="{A5BDAEBD-FA88-47AE-91D8-2B4C47C13D9C}"
+          DTS:ExecutableType="CopyFromBlobTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ABDT Copy WorldBank file to working folder"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CopyFromBlobTask
+              ConnectionId="{DEB0949C-0A5C-4CB6-911F-A0C9028DBEA2}"
+              BlobContainer="crimestatisticsources"
+              BlobDirectory="wordbanksource/"
+              LocalDirectory="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.WorldBank"
+              FileNameFilter="*"
+              TimeRangeFrom="1/1/1900 12:00:00 AM +04:00"
+              TimeRangeTo="12/31/2200 12:00:00 AM +04:00" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="287,42"
+          Id="Package\SEQC Copy WorldBank data from BLOB\ABDT Copy WorldBank file to working folder"
+          TopLeft="44,68" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="370,255"
+          Size="370,298"
+          Id="Package\SEQC Copy WorldBank data from BLOB"
+          TopLeft="142,100" />
+        <AnnotationLayout
+          Text="Prepare_WorldBank.dtsx &#xD;&#xA;Copy data from BLOB storage to working folder for WorlBank file&#xD;&#xA;TODO&#xD;&#xA; • Rename file&#xD;&#xA; • Parametrize &#xD;&#xA;Delete redundant lines in the file"
+          ParentId="Package"
+          Size="344,104"
+          Id="1bbab43c-47d9-4887-b025-106859300701"
+          TopLeft="586,65">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Color="#FFF1F1F1">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
