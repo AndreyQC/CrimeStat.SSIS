@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Load_WorldBank"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{246B481F-497D-479B-8F3F-A1A21E84990F}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{8E6D2C4E-7230-4F71-A98A-87EDC8FB36BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3352,13 +3352,13 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\SEQC Preparation\SQLT turuncate staging WorldBankPopulation_untyped"
+          DTS:refId="Package\SEQC Preparation\SQL turuncate staging WorldBankPopulation_untyped"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{5E2375ED-A83E-4ED2-8AF4-7254F7626926}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SQLT turuncate staging WorldBankPopulation_untyped"
+          DTS:ObjectName="SQL turuncate staging WorldBankPopulation_untyped"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -3391,27 +3391,27 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="366,42"
+          Size="366.4,41.6"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped"
           TopLeft="34.6031741706693,50.4836599972559" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="430,157"
-          Size="430,200"
+          PanelSize="430.4,156.8"
+          Size="430.4,200"
           Id="Package\SEQC Load data to staging"
           TopLeft="59.8412703494636,216.921571163249" />
         <NodeLayout
-          Size="337,42"
-          Id="Package\SEQC Preparation\SQLT turuncate staging WorldBankPopulation_untyped"
+          Size="330.4,41.6"
+          Id="Package\SEQC Preparation\SQL turuncate staging WorldBankPopulation_untyped"
           TopLeft="47,27" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="461,120"
-          Size="461,163"
+          PanelSize="460.8,120"
+          Size="460.8,163.2"
           Id="Package\SEQC Preparation"
           TopLeft="43.8095245555955,6.27450967999155" />
         <EdgeLayout
@@ -3419,7 +3419,7 @@
           TopLeft="274.57539745253,169.274509679992">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,47.6470614832575"
               Start="0,0"
               End="0,40.1470614832575">
