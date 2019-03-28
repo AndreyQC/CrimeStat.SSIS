@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Load_UNCrime"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{73225B7E-F953-4C90-BD20-F75D4BFE156F}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{5DB6D544-4640-45FF-B64B-550F4DC8B70A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -707,13 +707,13 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\SEQC Preparation\SQL turuncate staging UNCrime_untyped"
+          DTS:refId="Package\SEQC Preparation\SQL truncate staging UNCrime_untyped"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{2E54F473-61F3-4321-BEDB-D25DEE548130}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SQL turuncate staging UNCrime_untyped"
+          DTS:ObjectName="SQL truncate staging UNCrime_untyped"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -746,42 +746,42 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="307.2,41.6"
+          Size="307,42"
           Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped"
           TopLeft="22,27" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="376,124"
-          Size="376,167.2"
+          Size="376,167"
           Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data"
           TopLeft="69,47" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="496.8,356.8"
-          Size="496.8,400"
+          PanelSize="497,357"
+          Size="497,400"
           Id="Package\SEQC Load data to staging"
-          TopLeft="23.8412703494636,228.921571163249" />
+          TopLeft="65.269841778035,374.635856877535" />
         <NodeLayout
-          Size="278.4,41.6"
-          Id="Package\SEQC Preparation\SQL turuncate staging UNCrime_untyped"
+          Size="278,42"
+          Id="Package\SEQC Preparation\SQL truncate staging UNCrime_untyped"
           TopLeft="47,27" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="460.8,120"
-          Size="460.8,163.2"
+          PanelSize="461,120"
+          Size="461,163"
           Id="Package\SEQC Preparation"
-          TopLeft="43.8095245555955,6.27450967999155" />
+          TopLeft="85.2380959841669,151.988795394277" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="273.22539745253,169.474509679992">
+          TopLeft="314.653968881101,315.188795394278">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,59.4470614832575"
               Start="0,0"
               End="0,51.9470614832575">
@@ -798,6 +798,23 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Staging_Load_UNCrime"
+          ParentId="Package"
+          Size="240,48"
+          Id="21b5b724-c26f-4d77-bf56-d3799d6da130"
+          TopLeft="202.412698920892,63.7787140203919">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="20.25"
+              Color="#FFFFFF00">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -805,25 +822,25 @@
     design-time-name="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="158.4,41.6"
+          Size="158,42"
           Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped\FFS UNCrime file"
           TopLeft="228.857143450757,95.8235285537878" />
         <NodeLayout
-          Size="236.8,41.6"
-          Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped\OLEDB staging UNCrime_untyped"
-          TopLeft="192,271" />
-        <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped\Derived Column"
           TopLeft="228.000003882817,175.011765735455" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped\OLEDB staging UNCrime_untyped"
+          TopLeft="192,271" />
         <EdgeLayout
           Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped.Paths[Flat File Source Output]"
           TopLeft="306.228573666787,137.423528553788">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,37.5882371816668"
               Start="0,0"
               End="0,30.0882371816668">
@@ -845,7 +862,7 @@
           TopLeft="307.400001941408,216.611765735455">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,54.3882342645454"
               Start="0,0"
               End="0,46.8882342645454">

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Load_WorldBank"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{8E6D2C4E-7230-4F71-A98A-87EDC8FB36BE}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{B16275C7-9727-488A-B29B-8B9D2450F562}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3295,6 +3295,26 @@
                           dataType="wstr"
                           length="255"
                           name="2018" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\OLEDB staging WorldBankPopulation_uptyped.Inputs[OLE DB Destination Input].ExternalColumns[sysETLrunId]"
+                          dataType="i4"
+                          name="sysETLrunId" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\OLEDB staging WorldBankPopulation_uptyped.Inputs[OLE DB Destination Input].ExternalColumns[sysCreatedAt]"
+                          dataType="dbTimeStamp"
+                          name="sysCreatedAt" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\OLEDB staging WorldBankPopulation_uptyped.Inputs[OLE DB Destination Input].ExternalColumns[sysChangedAt]"
+                          dataType="dbTimeStamp"
+                          name="sysChangedAt" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\OLEDB staging WorldBankPopulation_uptyped.Inputs[OLE DB Destination Input].ExternalColumns[sysCreatedBy]"
+                          dataType="i4"
+                          name="sysCreatedBy" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\OLEDB staging WorldBankPopulation_uptyped.Inputs[OLE DB Destination Input].ExternalColumns[sysChangedBy]"
+                          dataType="i4"
+                          name="sysChangedBy" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3352,13 +3372,13 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\SEQC Preparation\SQL turuncate staging WorldBankPopulation_untyped"
+          DTS:refId="Package\SEQC Preparation\SQL truncate staging WorldBankPopulation_untyped"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{5E2375ED-A83E-4ED2-8AF4-7254F7626926}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SQL turuncate staging WorldBankPopulation_untyped"
+          DTS:ObjectName="SQL truncate staging WorldBankPopulation_untyped"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -3391,35 +3411,35 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="366.4,41.6"
+          Size="366,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped"
           TopLeft="34.6031741706693,50.4836599972559" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="430.4,156.8"
-          Size="430.4,200"
+          PanelSize="430,157"
+          Size="430,200"
           Id="Package\SEQC Load data to staging"
-          TopLeft="59.8412703494636,216.921571163249" />
+          TopLeft="62.8412703494636,294.921571163249" />
         <NodeLayout
-          Size="330.4,41.6"
-          Id="Package\SEQC Preparation\SQL turuncate staging WorldBankPopulation_untyped"
+          Size="325,42"
+          Id="Package\SEQC Preparation\SQL truncate staging WorldBankPopulation_untyped"
           TopLeft="47,27" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="460.8,120"
-          Size="460.8,163.2"
+          PanelSize="461,120"
+          Size="461,163"
           Id="Package\SEQC Preparation"
-          TopLeft="43.8095245555955,6.27450967999155" />
+          TopLeft="46.8095245555955,84.2745096799916" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="274.57539745253,169.274509679992">
+          TopLeft="277.57539745253,247.274509679992">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,47.6470614832575"
               Start="0,0"
               End="0,40.1470614832575">
@@ -3436,6 +3456,23 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Staging_Load_WorldBank"
+          ParentId="Package"
+          Size="257,48"
+          Id="348ee4b2-2ea1-491a-8f43-eb0833b451e6"
+          TopLeft="135.809524555595,29.921571163249">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="20.25"
+              Color="#FFFFFF00">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3448,6 +3485,10 @@
           Size="167,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\FFS WorldBank file"
           TopLeft="194,157" />
+        <NodeLayout
+          Size="296,42"
+          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\OLEDB staging WorldBankPopulation_uptyped"
+          TopLeft="130,327" />
         <NodeLayout
           Size="154,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\Derived Column"
@@ -3474,10 +3515,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="296,42"
-          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped\OLEDB staging WorldBankPopulation_uptyped"
-          TopLeft="130,327" />
         <EdgeLayout
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_uptyped.Paths[Derived Column Output]"
           TopLeft="275,274">
