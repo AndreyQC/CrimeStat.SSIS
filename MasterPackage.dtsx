@@ -11,12 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{9C49B43F-4DDA-46D3-9E13-D7B5A571D10E}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{71A9FDD3-6291-4B00-B75E-43B144B6CAFD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC DWH"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{88371377-A8DC-4283-B9A3-056393B368EA}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC DWH">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\SEQC Preparation"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -197,6 +208,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\SEQC Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{37C24F75-87A6-4505-8D82-4D98D768DE86}"
+      DTS:From="Package\SEQC Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SEQC DWH" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -227,8 +246,24 @@
           TopLeft="32,38" />
         <NodeLayout
           Size="245,42"
+          Id="Package\SEQC Staging\Staging_Load_UNCrime"
+          TopLeft="337,40" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\SEQC Staging\Staging_Load_WorldBank"
+          TopLeft="629,40" />
+        <NodeLayout
+          Size="245,42"
           Id="Package\SEQC Staging\Staging_Transform_Country"
           TopLeft="29,140" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\SEQC Staging\Staging_Transform_UNCrime"
+          TopLeft="334,142" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\SEQC Staging\Staging_Transform_WorldBank"
+          TopLeft="626,142" />
         <EdgeLayout
           Id="Package\SEQC Staging.PrecedenceConstraints[Constraint]"
           TopLeft="153,80">
@@ -251,14 +286,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="245,42"
-          Id="Package\SEQC Staging\Staging_Load_UNCrime"
-          TopLeft="337,40" />
-        <NodeLayout
-          Size="245,42"
-          Id="Package\SEQC Staging\Staging_Transform_UNCrime"
-          TopLeft="334,142" />
         <EdgeLayout
           Id="Package\SEQC Staging.PrecedenceConstraints[Constraint 1]"
           TopLeft="458,82">
@@ -281,10 +308,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="245,42"
-          Id="Package\SEQC Staging\Staging_Load_WorldBank"
-          TopLeft="629,40" />
         <EdgeLayout
           Id="Package\SEQC Staging.PrecedenceConstraints[Constraint 1 1]"
           TopLeft="750,82">
@@ -307,15 +330,11 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="245,42"
-          Id="Package\SEQC Staging\Staging_Transform_WorldBank"
-          TopLeft="626,142" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="917,441"
-          Size="917,484"
+          PanelSize="917,228"
+          Size="917,271"
           Id="Package\SEQC Staging"
           TopLeft="88,321" />
         <EdgeLayout
@@ -332,6 +351,35 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="917,109"
+          Size="917,152"
+          Id="Package\SEQC DWH"
+          TopLeft="89,647" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="547,592">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

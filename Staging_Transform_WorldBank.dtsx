@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Transform_WorldBank"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{368452BE-E742-402E-8C44-81617660324A}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{79E87B76-48AC-41EF-AF51-1A3841A65885}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3393,36 +3393,6 @@
                           cachedName="2018"
                           externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].ExternalColumns[2018]"
                           lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[2018]" />
-                        <inputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].Columns[sysETLrunId]"
-                          cachedDataType="i4"
-                          cachedName="sysETLrunId"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].ExternalColumns[sysETLrunId]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysETLrunId]" />
-                        <inputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].Columns[sysCreatedAt]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="sysCreatedAt"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].ExternalColumns[sysCreatedAt]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysCreatedAt]" />
-                        <inputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].Columns[sysChangedAt]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="sysChangedAt"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].ExternalColumns[sysChangedAt]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysChangedAt]" />
-                        <inputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].Columns[sysCreatedBy]"
-                          cachedDataType="i4"
-                          cachedName="sysCreatedBy"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].ExternalColumns[sysCreatedBy]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysCreatedBy]" />
-                        <inputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].Columns[sysChangedBy]"
-                          cachedDataType="i4"
-                          cachedName="sysChangedBy"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed.Inputs[OLE DB Destination Input].ExternalColumns[sysChangedBy]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysChangedBy]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3746,7 +3716,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[staging].[WorldBankPopulation_uptyped]</property>
+                      name="OpenRowset">[staging].[WorldBankPopulation_untyped]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4420,51 +4390,6 @@
                           length="255"
                           lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[2018]"
                           name="2018"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysETLrunId]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].ExternalColumns[sysETLrunId]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysETLrunId]"
-                          name="sysETLrunId"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysCreatedAt]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].ExternalColumns[sysCreatedAt]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysCreatedAt]"
-                          name="sysCreatedAt"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysChangedAt]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].ExternalColumns[sysChangedAt]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysChangedAt]"
-                          name="sysChangedAt"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysCreatedBy]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].ExternalColumns[sysCreatedBy]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysCreatedBy]"
-                          name="sysCreatedBy"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysChangedBy]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].ExternalColumns[sysChangedBy]"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Output].Columns[sysChangedBy]"
-                          name="sysChangedBy"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -5190,31 +5115,6 @@
                           lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[2018]"
                           name="2018" />
                         <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysETLrunId]"
-                          dataType="i4"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysETLrunId]"
-                          name="sysETLrunId" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysCreatedAt]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysCreatedAt]"
-                          name="sysCreatedAt" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysChangedAt]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysChangedAt]"
-                          name="sysChangedAt" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysCreatedBy]"
-                          dataType="i4"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysCreatedBy]"
-                          name="sysCreatedBy" />
-                        <outputColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysChangedBy]"
-                          dataType="i4"
-                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[sysChangedBy]"
-                          name="sysChangedBy" />
-                        <outputColumn
                           refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
                           lineageId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -5833,6 +5733,10 @@
           Size="461,264"
           Id="Package\SEQC Preparation"
           TopLeft="61.8888888888889,148" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\TEST PIVOT"
+          TopLeft="686,425.647061483257" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="292.265872896934,412">
@@ -5855,10 +5759,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="137,42"
-          Id="Package\TEST PIVOT"
-          TopLeft="686,425.647061483257" />
         <AnnotationLayout
           Text="Staging_Transform_WorldBank"
           ParentId="Package"
@@ -5885,39 +5785,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="115,42"
-          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\Unpivot"
-          TopLeft="154,142" />
+          Size="310,42"
+          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted"
+          TopLeft="63,253" />
         <NodeLayout
           Size="290,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLESRC staging WorldBankPopulation_typed"
           TopLeft="59,60" />
-        <EdgeLayout
-          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted.Paths[OLE DB Source Output]"
-          TopLeft="207.75,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="310,42"
-          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted"
-          TopLeft="63,253" />
+          Size="115,42"
+          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\Unpivot"
+          TopLeft="154,142" />
         <EdgeLayout
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted.Paths[Unpivot Output]"
           TopLeft="214.75,184">
@@ -5940,9 +5818,44 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted.Paths[OLE DB Source Output]"
+          TopLeft="207.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLESRC staging WorldBankPopulation_typed">
     <Properties>
@@ -6009,19 +5922,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
