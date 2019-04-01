@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="dwh_Load_DimCountry"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{184E7E39-D674-4910-98E4-65DC40FB37E2}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{7DAE53B6-6123-4AF5-8D0F-5966A4E32571}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -56,12 +56,11 @@
                       name="Conditional Split Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Conditional Split.Inputs[Conditional Split Input].Columns[CountryISOCodeSCR]"
+                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Conditional Split.Inputs[Conditional Split Input].Columns[CountryISOCodeDST]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="CountryISOCodeSCR"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSCR]" />
+                          cachedName="CountryISOCodeDST"
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeDST]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -81,13 +80,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">![ISNULL](#{Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSCR]})</property>
+                          name="Expression">[ISNULL](#{Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeDST]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the friendly version of the expression. This expression version uses column names."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(CountryISOCodeSCR)</property>
+                          name="FriendlyExpression">ISNULL(CountryISOCodeDST)</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -166,30 +165,30 @@
                       name="Merge Join Left Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input].Columns[CountryISOCodeSRC]"
+                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input].Columns[CountryISOCode]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="CountryISOCodeSRC"
+                          cachedName="CountryISOCode"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[CountryISOCodeSRC]" />
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[CountryISOCode]" />
                         <inputColumn
                           refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input].Columns[Country]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Country"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[Country]" />
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Country]" />
                         <inputColumn
                           refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input].Columns[Region]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Region"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[Region]" />
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Region]" />
                         <inputColumn
                           refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input].Columns[SubRegion]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="SubRegion"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[SubRegion]" />
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[SubRegion]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -199,12 +198,12 @@
                       name="Merge Join Right Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Right Input].Columns[CountryISOCodeDST]"
+                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Right Input].Columns[CountryISOCode]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="CountryISOCodeDST"
+                          cachedName="CountryISOCode"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[CountryISOCodeDST]" />
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[CountryISOCode]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -216,18 +215,32 @@
                       name="Merge Join Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSCR]"
+                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeDST]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSCR]"
-                          name="CountryISOCodeSCR"
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeDST]"
+                          name="CountryISOCodeDST">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Right Input].Columns[CountryISOCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSRC]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSRC]"
+                          name="CountryISOCodeSRC"
                           sortKeyPosition="1">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input].Columns[CountryISOCodeSRC]}</property>
+                              name="InputColumnID">#{Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input].Columns[CountryISOCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -371,13 +384,13 @@
                           externalMetadataColumnId="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                           lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountrySRC]" />
                         <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry.Inputs[OLE DB Destination Input].Columns[CountryISOCodeSCR]"
+                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry.Inputs[OLE DB Destination Input].Columns[CountryISOCodeSRC]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="CountryISOCodeSCR"
+                          cachedName="CountryISOCodeSRC"
                           cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry.Inputs[OLE DB Destination Input].ExternalColumns[CountryISOCode]"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSCR]" />
+                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryISOCodeSRC]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -484,7 +497,8 @@
       ,[Country]
       ,[CountryISOCode]
   FROM [dwh].[DimCountry]
-  WHERE [DimCountryKey] &gt;-1</property>
+  WHERE [DimCountryKey] &gt;-1
+ORDER BY [CountryISOCode]</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -518,6 +532,7 @@
                   <outputs>
                     <output
                       refId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output]"
+                      isSorted="true"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
@@ -568,6 +583,7 @@
                           length="255"
                           lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[CountryISOCode]"
                           name="CountryISOCode"
+                          sortKeyPosition="1"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -678,7 +694,8 @@
       ,[alpha-3] AS [CountryISOCode]
       ,[region] AS [Region]
       ,[sub-region] AS [SubRegion]
-  FROM [staging].[Country_typed]</property>
+  FROM [staging].[Country_typed]
+ORDER BY [CountryISOCode]</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -712,6 +729,7 @@
                   <outputs>
                     <output
                       refId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output]"
+                      isSorted="true"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
@@ -733,6 +751,7 @@
                           length="255"
                           lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[CountryISOCode]"
                           name="CountryISOCode"
+                          sortKeyPosition="1"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Region]"
@@ -825,361 +844,6 @@
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST"
-                  componentClassID="Microsoft.Sort"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  name="Sort CountryISOCodeDST"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                      name="EliminateDuplicates">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify"
-                      name="MaximumThreads">-1</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Inputs[Sort Input]"
-                      name="Sort Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Inputs[Sort Input].Columns[DimCountryKey]"
-                          cachedDataType="i4"
-                          cachedName="DimCountryKey"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[DimCountryKey]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Inputs[Sort Input].Columns[Region]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Region"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[Region]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Inputs[Sort Input].Columns[SubRegion]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="SubRegion"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[SubRegion]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Inputs[Sort Input].Columns[Country]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Country"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[Country]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Inputs[Sort Input].Columns[CountryISOCode]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="CountryISOCode"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[CountryISOCode]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output]"
-                      isSorted="true"
-                      name="Sort Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[DimCountryKey]"
-                          dataType="i4"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[DimCountryKey]"
-                          name="DimCountryKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[DimCountryKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[Region]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[Region]"
-                          name="Region">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[Region]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[SubRegion]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[SubRegion]"
-                          name="SubRegion">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[SubRegion]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[Country]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[Country]"
-                          name="Country">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[Country]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[CountryISOCodeDST]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output].Columns[CountryISOCodeDST]"
-                          name="CountryISOCodeDST"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output].Columns[CountryISOCode]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC"
-                  componentClassID="Microsoft.Sort"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  name="Sort CountryISOCodeSRC"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                      name="EliminateDuplicates">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify"
-                      name="MaximumThreads">-1</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Inputs[Sort Input]"
-                      name="Sort Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Inputs[Sort Input].Columns[Country]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Country"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Country]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Inputs[Sort Input].Columns[CountryISOCode]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="CountryISOCode"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[CountryISOCode]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Inputs[Sort Input].Columns[Region]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Region"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Region]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Inputs[Sort Input].Columns[SubRegion]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="SubRegion"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[SubRegion]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output]"
-                      isSorted="true"
-                      name="Sort Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[Country]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[Country]"
-                          name="Country">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Country]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[CountryISOCodeSRC]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[CountryISOCodeSRC]"
-                          name="CountryISOCodeSRC"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[CountryISOCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[Region]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[Region]"
-                          name="Region">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[Region]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[SubRegion]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output].Columns[SubRegion]"
-                          name="SubRegion">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output].Columns[SubRegion]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
                 <path
@@ -1194,24 +858,14 @@
                   startId="Package\SEQC DimCountry load\DFT Load DimCountry\Conditional Split.Outputs[NewCountry]" />
                 <path
                   refId="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[OLE DB Source Output]"
-                  endId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Inputs[Sort Input]"
+                  endId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Right Input]"
                   name="OLE DB Source Output"
                   startId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[OLE DB Source Output1]"
-                  endId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Inputs[Sort Input]"
+                  endId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input]"
                   name="OLE DB Source Output"
                   startId="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[Sort Output]"
-                  endId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Left Input]"
-                  name="Sort Output"
-                  startId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC.Outputs[Sort Output]" />
-                <path
-                  refId="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[Sort Output1]"
-                  endId="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1371,135 +1025,21 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130,42"
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join"
-          TopLeft="358.75,412.5" />
-        <NodeLayout
-          Size="190,42"
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry"
-          TopLeft="322.5,656.25" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeSRC"
-          TopLeft="75,288" />
+          Size="189,42"
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry"
+          TopLeft="561.888888888889,59" />
         <NodeLayout
           Size="202,42"
           Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries"
-          TopLeft="77,58" />
-        <NodeLayout
-          Size="199,42"
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry\Sort CountryISOCodeDST"
-          TopLeft="560,188" />
+          TopLeft="77,57" />
         <NodeLayout
           Size="155,42"
           Id="Package\SEQC DimCountry load\DFT Load DimCountry\Conditional Split"
           TopLeft="341.25,537.5" />
         <NodeLayout
-          Size="189,42"
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry"
-          TopLeft="545,62" />
-        <EdgeLayout
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[Sort Output1]"
-          TopLeft="659.5,230">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-215.416666666667,182.5"
-              Start="0,0"
-              End="-215.416666666667,175">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,104.168693009119" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,104.168693009119"
-                    Point2="0,108.168693009119"
-                    Point3="-4,108.168693009119" />
-                  <mssgle:LineSegment
-                    End="-211.416666666667,108.168693009119" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-211.416666666667,108.168693009119"
-                    Point2="-215.416666666667,108.168693009119"
-                    Point3="-215.416666666667,112.168693009119" />
-                  <mssgle:LineSegment
-                    End="-215.416666666667,175" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[Sort Output]"
-          TopLeft="174,330">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="229.416666666667,82.5"
-              Start="0,0"
-              End="229.416666666667,75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.8981762917933" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,44.8981762917933"
-                    Point2="0,48.8981762917933"
-                    Point3="4,48.8981762917933" />
-                  <mssgle:LineSegment
-                    End="225.416666666667,48.8981762917933" />
-                  <mssgle:CubicBezierSegment
-                    Point1="225.416666666667,48.8981762917933"
-                    Point2="229.416666666667,48.8981762917933"
-                    Point3="229.416666666667,52.8981762917933" />
-                  <mssgle:LineSegment
-                    End="229.416666666667,75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[OLE DB Source Output]"
-          TopLeft="639.5,104">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="20,84"
-              Start="0,0"
-              End="20,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38"
-                    Point2="0,42"
-                    Point3="4,42" />
-                  <mssgle:LineSegment
-                    End="16,42" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16,42"
-                    Point2="20,42"
-                    Point3="20,46" />
-                  <mssgle:LineSegment
-                    End="20,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="190,42"
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry"
+          TopLeft="322.5,656.25" />
         <EdgeLayout
           Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[NewCountry]"
           TopLeft="418.125,579.5">
@@ -1524,20 +1064,36 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join"
+          TopLeft="361.111111111111,290" />
         <EdgeLayout
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[Merge Join Output]"
-          TopLeft="421.25,454.5">
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[OLE DB Source Output]"
+          TopLeft="656.388888888889,101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,83"
+              EndConnector="-230.277777777778,189"
               Start="0,0"
-              End="0,75.5">
+              End="-230.277777777778,181.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,75.5" />
+                    End="0,90.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,90.5"
+                    Point2="0,94.5"
+                    Point3="-4,94.5" />
+                  <mssgle:LineSegment
+                    End="-226.277777777778,94.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-226.277777777778,94.5"
+                    Point2="-230.277777777778,94.5"
+                    Point3="-230.277777777778,98.5" />
+                  <mssgle:LineSegment
+                    End="-230.277777777778,181.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1548,18 +1104,52 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[OLE DB Source Output1]"
-          TopLeft="176,100">
+          TopLeft="178,99">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,188"
+              EndConnector="227.777777777778,191"
               Start="0,0"
-              End="0,180.5">
+              End="227.777777777778,183.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,180.5" />
+                    End="0,92.5400202634245" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,92.5400202634245"
+                    Point2="0,96.5400202634245"
+                    Point3="4,96.5400202634245" />
+                  <mssgle:LineSegment
+                    End="223.777777777778,96.5400202634245" />
+                  <mssgle:CubicBezierSegment
+                    Point1="223.777777777778,96.5400202634245"
+                    Point2="227.777777777778,96.5400202634245"
+                    Point3="227.777777777778,100.540020263424" />
+                  <mssgle:LineSegment
+                    End="227.777777777778,183.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[Merge Join Output]"
+          TopLeft="422.430555555556,332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,205.5"
+              Start="0,0"
+              End="0,198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,198" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1572,15 +1162,10 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry">
+    design-time-name="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1593,10 +1178,15 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry">
+    design-time-name="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

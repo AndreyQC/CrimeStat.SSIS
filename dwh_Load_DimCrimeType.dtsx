@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="dwh_Load_DimCrimeType"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{AB3E2008-9909-4281-81DF-20917ABEC29E}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{8F69624F-A9A0-4300-8350-F9D01BC4C6B6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -302,7 +302,7 @@
                           cachedLength="255"
                           cachedName="CrimeTypeName"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]" />
+                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType.Outputs[OLE DB Source Output].Columns[CrimeTypeName]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -515,7 +515,8 @@
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [DimCrimeTypeKey]
       ,[CrimeTypeName]
   FROM [dwh].[DimCrimeType]
-WHERE [DimCrimeTypeKey]&gt;-1</property>
+WHERE [DimCrimeTypeKey]&gt;-1
+ORDER BY [CrimeTypeName]</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -549,6 +550,7 @@ WHERE [DimCrimeTypeKey]&gt;-1</property>
                   <outputs>
                     <output
                       refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType.Outputs[OLE DB Source Output]"
+                      isSorted="true"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
@@ -569,6 +571,7 @@ WHERE [DimCrimeTypeKey]&gt;-1</property>
                           length="255"
                           lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType.Outputs[OLE DB Source Output].Columns[CrimeTypeName]"
                           name="CrimeTypeName"
+                          sortKeyPosition="1"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -828,105 +831,6 @@ FROM [staging].[UNCrime_typed]</property>
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType"
-                  componentClassID="Microsoft.Sort"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  name="SRC DST CrimeType"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                      name="EliminateDuplicates">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify"
-                      name="MaximumThreads">-1</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Inputs[Sort Input]"
-                      name="Sort Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Inputs[Sort Input].Columns[DimCrimeTypeKey]"
-                          cachedDataType="i4"
-                          cachedName="DimCrimeTypeKey"
-                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType.Outputs[OLE DB Source Output].Columns[DimCrimeTypeKey]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Inputs[Sort Input].Columns[CrimeTypeName]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="CrimeTypeName"
-                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType.Outputs[OLE DB Source Output].Columns[CrimeTypeName]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Outputs[Sort Output]"
-                      isSorted="true"
-                      name="Sort Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Outputs[Sort Output].Columns[DimCrimeTypeKey]"
-                          dataType="i4"
-                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Outputs[Sort Output].Columns[DimCrimeTypeKey]"
-                          name="DimCrimeTypeKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType.Outputs[OLE DB Source Output].Columns[DimCrimeTypeKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Outputs[Sort Output].Columns[CrimeTypeName]"
-                          name="CrimeTypeName"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType.Outputs[OLE DB Source Output].Columns[CrimeTypeName]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
                 <path
@@ -951,7 +855,7 @@ FROM [staging].[UNCrime_typed]</property>
                   startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[OLE DB Source Output1]"
-                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Inputs[Sort Input]"
+                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Right Input]"
                   name="OLE DB Source Output"
                   startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType.Outputs[OLE DB Source Output]" />
                 <path
@@ -959,11 +863,6 @@ FROM [staging].[UNCrime_typed]</property>
                   endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Left Input]"
                   name="Sort Output"
                   startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType.Outputs[Sort Output]" />
-                <path
-                  refId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Sort Output1]"
-                  endId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1029,25 +928,7 @@ FROM [staging].[UNCrime_typed]</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <AnnotationLayout
-          Text="dwh_Load_DimCrimeType"
-          ParentId="Package"
-          Size="297,48"
-          Id="d9d78371-8365-4da4-b97b-bcedfd5a3075"
-          TopLeft="60,60">
-          <AnnotationLayout.FontInfo>
-            <mssge:FontInfo
-              Family="Tahoma"
-              Size="20.25"
-              Color="#FF00FFFF"
-              Weight="Bold">
-              <mssge:FontInfo.TextDecorations>
-                <av:TextDecorationCollection />
-              </mssge:FontInfo.TextDecorations>
-            </mssge:FontInfo>
-          </AnnotationLayout.FontInfo>
-        </AnnotationLayout>
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="196,42"
           Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType"
@@ -1114,6 +995,24 @@ FROM [staging].[UNCrime_typed]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="dwh_Load_DimCrimeType"
+          ParentId="Package"
+          Size="297,48"
+          Id="d9d78371-8365-4da4-b97b-bcedfd5a3075"
+          TopLeft="60,60">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="20.25"
+              Color="#FF00FFFF"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1123,13 +1022,67 @@ FROM [staging].[UNCrime_typed]</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="130,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join"
+          TopLeft="358.75,412.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType"
+          TopLeft="322.5,656.25" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType"
+          TopLeft="88,288" />
+        <NodeLayout
           Size="199,42"
           Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime"
           TopLeft="77,58" />
         <NodeLayout
+          Size="155,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split"
+          TopLeft="341.25,537.5" />
+        <NodeLayout
           Size="152,42"
           Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\DER CrimeType"
           TopLeft="101,155" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType"
+          TopLeft="545,62" />
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Sort Output]"
+          TopLeft="175,330">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="228.416666666667,82.5"
+              Start="0,0"
+              End="228.416666666667,75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8981762917933" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.8981762917933"
+                    Point2="0,48.8981762917933"
+                    Point3="4,48.8981762917933" />
+                  <mssgle:LineSegment
+                    End="224.416666666667,48.8981762917933" />
+                  <mssgle:CubicBezierSegment
+                    Point1="224.416666666667,48.8981762917933"
+                    Point2="228.416666666667,48.8981762917933"
+                    Point3="228.416666666667,52.8981762917933" />
+                  <mssgle:LineSegment
+                    End="228.416666666667,75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[OLE DB Source Output]"
           TopLeft="176.75,100">
@@ -1152,164 +1105,6 @@ FROM [staging].[UNCrime_typed]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC DimCrimeType"
-          TopLeft="545,62" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\SRC DST CrimeType"
-          TopLeft="560,188" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Sort SRC CrimeType"
-          TopLeft="88,288" />
-        <EdgeLayout
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Derived Column Output]"
-          TopLeft="176,197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,91"
-              Start="0,0"
-              End="0,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,83.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[OLE DB Source Output1]"
-          TopLeft="643.25,104">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,84"
-              Start="0,0"
-              End="0,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Merge Join"
-          TopLeft="358.75,412.5" />
-        <EdgeLayout
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Sort Output]"
-          TopLeft="175,330">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="248.75,82.5"
-              Start="0,0"
-              End="248.75,75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.25"
-                    Point2="0,41.25"
-                    Point3="4,41.25" />
-                  <mssgle:LineSegment
-                    End="244.75,41.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="244.75,41.25"
-                    Point2="248.75,41.25"
-                    Point3="248.75,45.25" />
-                  <mssgle:LineSegment
-                    End="248.75,75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Sort Output1]"
-          TopLeft="647,230">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-202.916666666667,182.5"
-              Start="0,0"
-              End="-202.916666666667,175">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,104.168693009119" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,104.168693009119"
-                    Point2="0,108.168693009119"
-                    Point3="-4,108.168693009119" />
-                  <mssgle:LineSegment
-                    End="-198.916666666667,108.168693009119" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-198.916666666667,108.168693009119"
-                    Point2="-202.916666666667,108.168693009119"
-                    Point3="-202.916666666667,112.168693009119" />
-                  <mssgle:LineSegment
-                    End="-202.916666666667,175" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\Conditional Split"
-          TopLeft="341.25,537.5" />
-        <EdgeLayout
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Merge Join Output]"
-          TopLeft="421.25,454.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,83"
-              Start="0,0"
-              End="0,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="190,42"
-          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType"
-          TopLeft="322.5,656.25" />
         <EdgeLayout
           Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[NewCrimeType]"
           TopLeft="418.125,579.5">
@@ -1334,9 +1129,102 @@ FROM [staging].[UNCrime_typed]</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Merge Join Output]"
+          TopLeft="421.25,454.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,29.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[Derived Column Output]"
+          TopLeft="176,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,91"
+              Start="0,0"
+              End="0,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCrimeType load\DFT Load DimCrimeType.Paths[OLE DB Source Output1]"
+          TopLeft="639.5,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-195.416666666667,308.5"
+              Start="0,0"
+              End="-195.416666666667,301">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,178.849544072948" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,178.849544072948"
+                    Point2="0,182.849544072948"
+                    Point3="-4,182.849544072948" />
+                  <mssgle:LineSegment
+                    End="-191.416666666667,182.849544072948" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-191.416666666667,182.849544072948"
+                    Point2="-195.416666666667,182.849544072948"
+                    Point3="-195.416666666667,186.849544072948" />
+                  <mssgle:LineSegment
+                    End="-195.416666666667,301" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLESRC staging UNCrime">
     <Properties>
@@ -1350,19 +1238,6 @@ FROM [staging].[UNCrime_typed]</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQC DimCrimeType load\DFT Load DimCrimeType\OLEDST DimCrimeType">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
