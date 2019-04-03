@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{6788265F-9CF2-41B3-99F9-E7F18D35909C}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{201AA2FE-87DA-49E1-ACE1-1329B8D0B1B4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -350,17 +350,17 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="245,42"
-          Id="Package\SEQC DWH\SEQC Load Dimensions\dwh_Load_DimDate"
-          TopLeft="12.7777777777778,14" />
+          Size="188,42"
+          Id="Package\SEQC DWH\SEQC Load Dimensions\dwh_Load_DimCountry"
+          TopLeft="531.666666666667,14" />
         <NodeLayout
           Size="245,42"
           Id="Package\SEQC DWH\SEQC Load Dimensions\dwh_Load_DimCrimeType"
           TopLeft="272,14" />
         <NodeLayout
-          Size="188,42"
-          Id="Package\SEQC DWH\SEQC Load Dimensions\dwh_Load_DimCountry"
-          TopLeft="531.666666666667,14" />
+          Size="245,42"
+          Id="Package\SEQC DWH\SEQC Load Dimensions\dwh_Load_DimDate"
+          TopLeft="12.7777777777778,14" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -370,12 +370,12 @@
           TopLeft="47,35" />
         <NodeLayout
           Size="245,42"
-          Id="Package\SEQC DWH\SEQC Load Facts\dwh_Load_FactPopulation"
-          TopLeft="392,19" />
-        <NodeLayout
-          Size="245,42"
           Id="Package\SEQC DWH\SEQC Load Facts\dwh_Load_FactCrime"
           TopLeft="76,23" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\SEQC DWH\SEQC Load Facts\dwh_Load_FactPopulation"
+          TopLeft="392,19" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"

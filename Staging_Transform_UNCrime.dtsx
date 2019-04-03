@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Transform_UNCrime"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{71AF5390-4C4F-470E-9605-F9B63A475E2C}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{4D9C8E7B-EC00-47E5-9CBA-91E9A6116320}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -186,6 +186,13 @@
                           cachedName="Rate"
                           externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLEDST staging UNCrime_typed.Inputs[OLE DB Destination Input].ExternalColumns[Rate]"
                           lineageId="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLESRC staging UNCrime_untyped.Outputs[OLE DB Source Output].Columns[Rate]" />
+                        <inputColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLEDST staging UNCrime_typed.Inputs[OLE DB Destination Input].Columns[Count]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Count"
+                          externalMetadataColumnId="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLEDST staging UNCrime_typed.Inputs[OLE DB Destination Input].ExternalColumns[Count]"
+                          lineageId="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLESRC staging UNCrime_untyped.Outputs[OLE DB Source Output].Columns[Count]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -240,6 +247,11 @@
                           name="Rate"
                           precision="15"
                           scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLEDST staging UNCrime_typed.Inputs[OLE DB Destination Input].ExternalColumns[Count]"
+                          dataType="wstr"
+                          length="255"
+                          name="Count" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
