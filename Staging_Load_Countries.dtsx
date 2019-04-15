@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Load_Countries"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{200C818F-5537-4FEF-BD81-47529D320F67}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{A7E15050-28A3-42A1-AAB5-E7F49D468D7A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{8B43622F-9CC1-4C7D-84BF-77E9325E7C9F}"
       DTS:ObjectName="FFC_ISOCountries">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::CrimeStatETLWorkingFolder] + "\\" + "CrimeStat.Source.Countries\\ISOcountries.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.Countries\ISOcountries.csv">
+          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\TST\CrimeStat.Source.Countries\ISOcountries.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="name"
-              DTS:DTSID="{02B21E50-1EFF-47C2-A960-18C0B24225DF}"
+              DTS:DTSID="{0D18F0C3-CE73-4C00-A792-E9E6F230BFDB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="alpha-2"
-              DTS:DTSID="{1DAE2011-5193-43FA-A9AD-0A549ADC9C93}"
+              DTS:DTSID="{D03CCB49-A521-466C-938D-673085C8F929}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="alpha-3"
-              DTS:DTSID="{A96870BE-6793-4957-B693-3185D3AE5317}"
+              DTS:DTSID="{B1603F19-FB81-432C-83D0-DDC33652ECC1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="country-code"
-              DTS:DTSID="{69AEC5A9-B93C-4490-AA00-ABE605B009F8}"
+              DTS:DTSID="{B111EB90-F320-4449-B126-11C34F0796F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="iso_3166-2"
-              DTS:DTSID="{32CE824A-63A2-4667-9D84-517D63F10A9E}"
+              DTS:DTSID="{AA78D514-94D5-47AD-978F-83421F116BA0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +86,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="region"
-              DTS:DTSID="{818D7E82-721D-4541-857C-8FAC58E27276}"
+              DTS:DTSID="{A969581A-8341-4B85-BF1F-F693B4651C40}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +95,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="sub-region"
-              DTS:DTSID="{0D8F9036-4556-44EB-8F74-2FF40A5B973B}"
+              DTS:DTSID="{E0339198-C92E-486E-AA86-8C6CEF25659D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +104,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="intermediate-region"
-              DTS:DTSID="{0A4BDD76-EE1A-43F2-A0A4-A7E37698E4E8}"
+              DTS:DTSID="{B72CD89A-7FFD-422A-849A-1346984A3056}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +113,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="region-code"
-              DTS:DTSID="{F231B1BF-4604-47C2-AE65-410B5720747A}"
+              DTS:DTSID="{E804055C-5AE5-4942-AB6E-3B2230A51B52}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +122,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="sub-region-code"
-              DTS:DTSID="{9A628FB3-098F-46F3-9E1F-C6E5092FBCD2}"
+              DTS:DTSID="{0DCDE672-E1A2-4C4D-96F6-1D87B9ACF9C1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +131,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="intermediate-region-code"
-              DTS:DTSID="{1E9D63AD-5C21-4D89-858E-1D9FA35CF459}"
+              DTS:DTSID="{EA25BCF5-16F0-4C1D-9209-A7897D988EFB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -844,25 +846,25 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="303,42"
+          Size="303.2,41.6"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging Country_untyped"
           TopLeft="55.6031741706693,50.4836599972559" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="430,157"
-          Size="430,200"
+          PanelSize="430.4,156.8"
+          Size="430.4,200"
           Id="Package\SEQC Load data to staging"
           TopLeft="97.6190481272414,365.03268227436" />
         <NodeLayout
-          Size="268,42"
+          Size="268,41.6"
           Id="Package\SEQC Preparation\SQLT truncate staging Country_untyped"
           TopLeft="83,22" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="461,120"
-          Size="461,163"
+          PanelSize="460.8,120"
+          Size="460.8,163.2"
           Id="Package\SEQC Preparation"
           TopLeft="81.5873023333733,154.385620791103" />
         <EdgeLayout
@@ -890,7 +892,7 @@
         <AnnotationLayout
           Text="Staging_Load_Countries"
           ParentId="Package"
-          Size="245,48"
+          Size="244.8,48.8"
           Id="ca3baa1f-686e-45a8-b8c1-d25982acd3d0"
           TopLeft="182.809524555595,35.2549044965824">
           <AnnotationLayout.FontInfo>
@@ -911,7 +913,7 @@
     design-time-name="Package\SEQC Load data to staging\DFT Load from File to staging Country_untyped">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="233,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging Country_untyped\OLEDB staging Country_untyped"
@@ -939,7 +941,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

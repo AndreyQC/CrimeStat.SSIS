@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Load_WorldBank"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{39163024-4D95-4A26-997A-6F9B1A9DDE06}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{35776710-2BE1-4CE1-8F36-5915649F7889}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{6C123CE0-7FBB-4C13-B57B-B82A143F8022}"
       DTS:ObjectName="FFC_WorlBank">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::CrimeStatETLWorkingFolder]+  "\\CrimeStat.Source.WorldBank\\WorldBankPopulation.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.WorldBank\WorldBankPopulation.csv">
+          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\TST\CrimeStat.Source.WorldBank\WorldBankPopulation.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3411,27 +3413,27 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="366,42"
+          Size="366.4,41.6"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_untyped"
           TopLeft="34.6031741706693,50.4836599972559" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="430,157"
-          Size="430,200"
+          PanelSize="430.4,156.8"
+          Size="430.4,200"
           Id="Package\SEQC Load data to staging"
           TopLeft="69.8412703494636,294.921571163249" />
         <NodeLayout
-          Size="325,42"
+          Size="324.8,41.6"
           Id="Package\SEQC Preparation\SQL truncate staging WorldBankPopulation_untyped"
           TopLeft="58,28" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="461,120"
-          Size="461,163"
+          PanelSize="460.8,120"
+          Size="460.8,163.2"
           Id="Package\SEQC Preparation"
           TopLeft="55.8095245555955,83.2745096799916" />
         <EdgeLayout
@@ -3439,7 +3441,7 @@
           TopLeft="285.57539745253,246.274509679992">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,48.6470614832574"
               Start="0,0"
               End="0,41.1470614832574">
@@ -3459,7 +3461,7 @@
         <AnnotationLayout
           Text="Staging_Load_WorldBank"
           ParentId="Package"
-          Size="257,48"
+          Size="256.8,48.8"
           Id="348ee4b2-2ea1-491a-8f43-eb0833b451e6"
           TopLeft="135.809524555595,29.921571163249">
           <AnnotationLayout.FontInfo>
@@ -3480,7 +3482,7 @@
     design-time-name="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_untyped">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="167,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_untyped\FFS WorldBank file"
@@ -3512,7 +3514,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3534,7 +3538,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

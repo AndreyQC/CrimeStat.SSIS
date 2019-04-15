@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Load_UNCrime"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{5DB6D544-4640-45FF-B64B-550F4DC8B70A}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{DF2E7AF2-2BD1-411D-8776-F3B4F6A0D6EA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.UNCrime\ConvertedToCSV\burglary.csv">
+          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\TST\CrimeStat.Source.UNCrime\ConvertedToCSV\burglary.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{9C9698E4-62C6-4BB5-9FEB-10CFD12F2243}"
+              DTS:DTSID="{CF22ED4A-BB32-482B-B140-2436162B6637}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Sub Region"
-              DTS:DTSID="{EAFA7075-FD12-4D98-9E43-35A616733CB4}"
+              DTS:DTSID="{BE61BF75-1C8F-45B1-AB5E-8941ACFFB66C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Country"
-              DTS:DTSID="{50D2F545-D2F4-4FDA-9AE3-DC7BB97D693E}"
+              DTS:DTSID="{CED88E05-028A-48DC-AA92-653B2DACCF17}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Count"
-              DTS:DTSID="{403149F9-70CA-4BF9-AE0E-9194A0FDF855}"
+              DTS:DTSID="{30A25CA7-D96E-4C6C-86AE-7A0EE91D7295}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Rate"
-              DTS:DTSID="{96EDB694-A216-4D74-AE6C-933300471F24}"
+              DTS:DTSID="{64F81300-959E-4AF8-A6A7-11CD63477990}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Year"
-              DTS:DTSID="{B4DF04F7-54DA-4631-938E-1A355772E549}"
+              DTS:DTSID="{29B847E6-920E-40CF-8F8E-51B006CEE72B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -106,11 +106,13 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{B38D3C64-6AE6-4A79-B520-FE00611D1643}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::CrimeStatETLWorkingFolder]+ &quot;\\CrimeStat.Source.UNCrime\\ConvertedToCSV\\burglary.csv&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="currentUNCrimeFileName">
       <DTS:VariableValue
-        DTS:DataType="8">\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.UNCrime\ConvertedToCSV\burglary.csv</DTS:VariableValue>
+        DTS:DataType="8">\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\TST\CrimeStat.Source.UNCrime\ConvertedToCSV\burglary.csv</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -128,7 +130,7 @@
         <DTS:Executable
           DTS:refId="Package\SEQC Load data to staging\FLC For each file of UNCrime data"
           DTS:CreationName="STOCK:FOREACHLOOP"
-          DTS:Description="Foreach Loop Container"
+          DTS:Description="{wrsrr}"
           DTS:DTSID="{146E1DA9-E31C-475C-8B34-FED48A4198DF}"
           DTS:ExecutableType="STOCK:FOREACHLOOP"
           DTS:LocaleID="-1"
@@ -137,10 +139,12 @@
             DTS:CreationName="Microsoft.ForEachFileEnumerator"
             DTS:DTSID="{D8141991-9D3F-47B8-AC2D-45CBE9A424C1}"
             DTS:ObjectName="{D8141991-9D3F-47B8-AC2D-45CBE9A424C1}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[$Project::CrimeStatETLWorkingFolder]+ "\\CrimeStat.Source.UNCrime\\ConvertedToCSV"</DTS:PropertyExpression>
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.UNCrime\ConvertedToCSV" />
+                  Folder="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\TST\CrimeStat.Source.UNCrime\ConvertedToCSV" />
                 <FEFEProperty
                   FileSpec="*.*" />
                 <FEFEProperty
@@ -688,8 +692,8 @@
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{4158408E-9B5D-49A6-ABF9-8E79A0E801B6}"
-              DTS:ObjectName="{4158408E-9B5D-49A6-ABF9-8E79A0E801B6}"
+              DTS:DTSID="{B58B4D1C-BAF4-4520-AC41-966686F756DE}"
+              DTS:ObjectName="{B58B4D1C-BAF4-4520-AC41-966686F756DE}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::currentUNCrimeFileName" />
           </DTS:ForEachVariableMappings>
@@ -748,32 +752,32 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="307,42"
+          Size="307.2,41.6"
           Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped"
           TopLeft="22,27" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="376,124"
-          Size="376,167"
+          Size="376,167.2"
           Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data"
           TopLeft="69,47" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="497,357"
-          Size="497,400"
+          PanelSize="496.8,356.8"
+          Size="496.8,400"
           Id="Package\SEQC Load data to staging"
           TopLeft="65.269841778035,374.635856877535" />
         <NodeLayout
-          Size="278,42"
+          Size="278.4,41.6"
           Id="Package\SEQC Preparation\SQL truncate staging UNCrime_untyped"
           TopLeft="47,27" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="461,120"
-          Size="461,163"
+          PanelSize="460.8,120"
+          Size="460.8,163.2"
           Id="Package\SEQC Preparation"
           TopLeft="85.2380959841669,151.988795394277" />
         <EdgeLayout
@@ -801,7 +805,7 @@
         <AnnotationLayout
           Text="Staging_Load_UNCrime"
           ParentId="Package"
-          Size="240,48"
+          Size="240,48.8"
           Id="21b5b724-c26f-4d77-bf56-d3799d6da130"
           TopLeft="202.412698920892,63.7787140203919">
           <AnnotationLayout.FontInfo>
@@ -822,7 +826,7 @@
     design-time-name="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158,42"
           Id="Package\SEQC Load data to staging\FLC For each file of UNCrime data\DFT Load from File to staging UNCrime_uptyped\FFS UNCrime file"
@@ -854,7 +858,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -876,7 +882,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

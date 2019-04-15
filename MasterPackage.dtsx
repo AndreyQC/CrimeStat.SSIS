@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{201AA2FE-87DA-49E1-ACE1-1329B8D0B1B4}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{F31FDF22-609E-4FB2-BD8A-FA22EE61811A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -350,37 +350,37 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="188,42"
+          Size="188,41.6"
           Id="Package\SEQC DWH\SEQC Load Dimensions\dwh_Load_DimCountry"
           TopLeft="531.666666666667,14" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC DWH\SEQC Load Dimensions\dwh_Load_DimCrimeType"
           TopLeft="272,14" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC DWH\SEQC Load Dimensions\dwh_Load_DimDate"
           TopLeft="12.7777777777778,14" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="794,150"
-          Size="794,193"
+          PanelSize="793.6,150.4"
+          Size="793.6,192.8"
           Id="Package\SEQC DWH\SEQC Load Dimensions"
           TopLeft="47,35" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC DWH\SEQC Load Facts\dwh_Load_FactCrime"
           TopLeft="76,23" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC DWH\SEQC Load Facts\dwh_Load_FactPopulation"
           TopLeft="392,19" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="794,116"
-          Size="794,159"
+          PanelSize="793.6,116"
+          Size="793.6,159.2"
           Id="Package\SEQC DWH\SEQC Load Facts"
           TopLeft="47,254" />
         <EdgeLayout
@@ -408,43 +408,43 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="917,468"
-          Size="917,511"
+          PanelSize="916.8,468"
+          Size="916.8,511.2"
           Id="Package\SEQC DWH"
           TopLeft="89,647" />
         <NodeLayout
-          Size="187,42"
+          Size="187.2,41.6"
           Id="Package\SEQC Preparation\EPT Prepare_Countries"
           TopLeft="40,45" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="680,152"
-          Size="680,195"
+          Size="680,195.2"
           Id="Package\SEQC Preparation"
           TopLeft="201,75" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC Staging\Staging_Load_Countries"
           TopLeft="32,38" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC Staging\Staging_Load_UNCrime"
           TopLeft="337,40" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC Staging\Staging_Load_WorldBank"
           TopLeft="629,40" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC Staging\Staging_Transform_Country"
           TopLeft="29,140" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC Staging\Staging_Transform_UNCrime"
           TopLeft="334,142" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\SEQC Staging\Staging_Transform_WorldBank"
           TopLeft="626,142" />
         <EdgeLayout
@@ -516,8 +516,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="917,228"
-          Size="917,271"
+          PanelSize="916.8,228"
+          Size="916.8,271.2"
           Id="Package\SEQC Staging"
           TopLeft="88,321" />
         <EdgeLayout
