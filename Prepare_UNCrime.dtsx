@@ -7,12 +7,12 @@
   DTS:CreatorName="SARATOV\Andrey_Potapov"
   DTS:DTSID="{649DA41D-E8DE-44E0-AD35-C9CF76D0133F}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="Prepare_UNCrime"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{F561C840-CC8A-48E1-82A9-88834EB0EFA3}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{6A60EF76-C82D-42BE-B7F4-684F6D36CA00}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,15 +23,106 @@
       DTS:ObjectName="svodspec">
       <DTS:ObjectData>
         <AzureStorageConnectionManager
-          ConnectionString="DefaultEndpointsProtocol=https;AccountName=svodspec;EndpointSuffix=core.windows.net">
-          <AccountKey
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALxSaQ1rkvU2YdpVHoBYDrwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB07CddBrX1446senge59BbAAAAAASAAACgAAAAEAAAANXHkGy0EmsjtNsvjz+FUlm4AAAAx/Tl2BrxGXJLNvbSGj8pMcGMeBMO8+ggC67rTtcvDzwkJkz0myBvxUaxKvHebOhhQGa3GtjMkL9cg9fNLH8WXtZtsof7Avy82EflDKH3kNwXk3nhmMh4CMpUpPuX8Jwu+ExdE9mcvNjpyEUrLsC1548PXutP3cylr7BBKhaxWWjryRMPLuWsHFprGjjIo+fZyxjv1039BlqGiK8nxnNlygZHc8pwYjE/M2cefzpn4kRHbJzu0hTdsBQAAAAjRZFLUc/rnLXQeoBStp9hdaGVZA</AccountKey>
-        </AzureStorageConnectionManager>
+          ConnectionString="DefaultEndpointsProtocol=https;AccountName=svodspec;EndpointSuffix=core.windows.net" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="CrimeStatDWH"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{3EC4FC9A-E62E-40AD-9D1B-5C31C5FE6A21}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{3EC4FC9A-E62E-40AD-9D1B-5C31C5FE6A21}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\SEQC Copy UNCrime data from BLOB"
@@ -42,6 +133,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SEQC Copy UNCrime data from BLOB">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC Copy UNCrime data from BLOB\ABDT Copy UNCrime files to working folder"
@@ -53,6 +146,8 @@
           DTS:ObjectName="ABDT Copy UNCrime files to working folder"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <CopyFromBlobTask
               ConnectionId="{2A44E763-2D27-4ACA-B4E2-EF35A888602C}"
@@ -91,7 +186,7 @@
           Id="Package\SEQC Copy UNCrime data from BLOB"
           TopLeft="142,100" />
         <AnnotationLayout
-          Text="Prepare_UNCrime.dtsx&#xD;&#xA;Copy data from BLOB storage to working folder for WorlBank file&#xD;&#xA;TODO&#xD;&#xA; • Parametrize &#xD;&#xA;"
+          Text="Prepare_UNCrime.dtsx&#xA;Copy data from BLOB storage to working folder for WorlBank file&#xA;TODO&#xA; • Parametrize &#xA;"
           ParentId="Package"
           Size="344,90"
           Id="21786142-2626-4fb4-a39c-27c88477571b"

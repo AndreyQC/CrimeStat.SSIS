@@ -7,12 +7,12 @@
   DTS:CreatorName="SARATOV\Andrey_Potapov"
   DTS:DTSID="{3717BE35-F4E6-43F3-9C01-AC0CED15C6F3}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="Prepare_WorldBank"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{A5E3BC75-033A-42AF-905A-16C594BE037C}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{5BA4D396-B590-4CFC-89D9-93751EA321D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,15 +23,106 @@
       DTS:ObjectName="svodspec">
       <DTS:ObjectData>
         <AzureStorageConnectionManager
-          ConnectionString="DefaultEndpointsProtocol=https;AccountName=svodspec;EndpointSuffix=core.windows.net">
-          <AccountKey
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALxSaQ1rkvU2YdpVHoBYDrwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACj2pdBj6zXusEcPQoirWWhAAAAAASAAACgAAAAEAAAAHjp3oMNmNrZLZ0z+76W/Ha4AAAA6S/8TB3oV+Omr3hUkdyM0OeE7RXBcqjiVYIUFXUEDlM7K2KD4k2F2QFep0w8JW0TXVb53EMqKdGE9T7AzmdFkpjuCFxmX/rhWVFg2boHcwQF15lb4HFiIyvsdhibXf8Jumg5NItzxC/Xc3H/+ehrHf+PmSH+VKSu8YsViE4PLpQNOVZnAx5de2e8Bu/GeWMXDP4UxtN8kJmzz6IWdyoA2jfKwH1YO3eRHsn3FlAVxIVjMM+7crDnuxQAAADffyXqbqmxxOTcQjFsVpnYkZJfpA</AccountKey>
-        </AzureStorageConnectionManager>
+          ConnectionString="DefaultEndpointsProtocol=https;AccountName=svodspec;EndpointSuffix=core.windows.net" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="CrimeStatDWH"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{C4F562A8-7F92-46C9-AA89-A449734BCE68}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{C4F562A8-7F92-46C9-AA89-A449734BCE68}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\SEQC Copy WorldBank data from BLOB"
@@ -42,6 +133,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SEQC Copy WorldBank data from BLOB">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC Copy WorldBank data from BLOB\ABDT Copy WorldBank file to working folder"
@@ -53,6 +146,8 @@
           DTS:ObjectName="ABDT Copy WorldBank file to working folder"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <CopyFromBlobTask
               ConnectionId="{DEB0949C-0A5C-4CB6-911F-A0C9028DBEA2}"
@@ -91,7 +186,7 @@
           Id="Package\SEQC Copy WorldBank data from BLOB"
           TopLeft="142,100" />
         <AnnotationLayout
-          Text="Prepare_WorldBank.dtsx &#xD;&#xA;Copy data from BLOB storage to working folder for WorlBank file&#xD;&#xA;TODO&#xD;&#xA; • Rename file&#xD;&#xA; • Parametrize &#xD;&#xA;Delete redundant lines in the file"
+          Text="Prepare_WorldBank.dtsx &#xA;Copy data from BLOB storage to working folder for WorlBank file&#xA;TODO&#xA; • Rename file&#xA; • Parametrize &#xA;Delete redundant lines in the file"
           ParentId="Package"
           Size="344,104"
           Id="1bbab43c-47d9-4887-b025-106859300701"
