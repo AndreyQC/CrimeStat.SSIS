@@ -11,11 +11,106 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="dwh_Load_DimCountry"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{7DAE53B6-6123-4AF5-8D0F-5966A4E32571}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{612683A1-05B2-4B02-AE81-D05CCDBBA684}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="CrimeStatDWH"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{9561D2B6-CF4E-401C-8885-2F41CC685A3C}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{9561D2B6-CF4E-401C-8885-2F41CC685A3C}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\SEQC DimCountry load"
@@ -27,6 +122,8 @@
       DTS:ObjectName="SEQC DimCountry load"
       DTS:TransactionOption="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC DimCountry load\DFT Load DimCountry"
@@ -38,6 +135,8 @@
           DTS:ObjectName="DFT Load DimCountry"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -880,6 +979,8 @@ ORDER BY [CountryISOCode]</property>
           DTS:ObjectName="SQL Dummy rows"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A251AAF3-BD7A-44B1-A889-8D897719A5E8}"
@@ -907,6 +1008,8 @@ ORDER BY [CountryISOCode]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="SEQC Preparation">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables />
     </DTS:Executable>
   </DTS:Executables>
@@ -931,7 +1034,7 @@ ORDER BY [CountryISOCode]</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="183,42"
           Id="Package\SEQC DimCountry load\DFT Load DimCountry"
@@ -945,7 +1048,7 @@ ORDER BY [CountryISOCode]</property>
           TopLeft="247.5,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,58"
               Start="0,0"
               End="0,50.5">
@@ -981,7 +1084,7 @@ ORDER BY [CountryISOCode]</property>
           TopLeft="298.765872896934,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,56.647061483257"
               Start="0,0"
               End="0,49.147061483257">
@@ -1025,81 +1128,47 @@ ORDER BY [CountryISOCode]</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="189,42"
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry"
-          TopLeft="561.888888888889,59" />
+          Size="130,42"
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join"
+          TopLeft="361.111111111111,290" />
         <NodeLayout
           Size="202,42"
           Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC staging Countries"
           TopLeft="77,57" />
         <NodeLayout
+          Size="190,42"
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry"
+          TopLeft="322.5,656.25" />
+        <NodeLayout
           Size="155,42"
           Id="Package\SEQC DimCountry load\DFT Load DimCountry\Conditional Split"
           TopLeft="341.25,537.5" />
         <NodeLayout
-          Size="190,42"
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLEDST DimCountry"
-          TopLeft="322.5,656.25" />
+          Size="189,42"
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry\OLESRC DimCountry"
+          TopLeft="561.888888888889,59" />
         <EdgeLayout
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[NewCountry]"
-          TopLeft="418.125,579.5">
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[Merge Join Output]"
+          TopLeft="422.430555555556,332">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,76.7500000000001"
+              EndConnector="0,205.5"
               Start="0,0"
-              End="0,69.2500000000001">
+              End="0,198">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.2500000000001" />
+                    End="0,198" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.55193359375,28.9179687500001,55.1038671875,11.4140625"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry\Merge Join"
-          TopLeft="361.111111111111,290" />
-        <EdgeLayout
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[OLE DB Source Output]"
-          TopLeft="656.388888888889,101">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-230.277777777778,189"
-              Start="0,0"
-              End="-230.277777777778,181.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,90.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,90.5"
-                    Point2="0,94.5"
-                    Point3="-4,94.5" />
-                  <mssgle:LineSegment
-                    End="-226.277777777778,94.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-226.277777777778,94.5"
-                    Point2="-230.277777777778,94.5"
-                    Point3="-230.277777777778,98.5" />
-                  <mssgle:LineSegment
-                    End="-230.277777777778,181.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1133,29 +1202,69 @@ ORDER BY [CountryISOCode]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[Merge Join Output]"
-          TopLeft="422.430555555556,332">
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[OLE DB Source Output]"
+          TopLeft="656.388888888889,101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,205.5"
+              EndConnector="-230.277777777778,189"
               Start="0,0"
-              End="0,198">
+              End="-230.277777777778,181.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,198" />
+                    End="0,90.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,90.5"
+                    Point2="0,94.5"
+                    Point3="-4,94.5" />
+                  <mssgle:LineSegment
+                    End="-226.277777777778,94.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-226.277777777778,94.5"
+                    Point2="-230.277777777778,94.5"
+                    Point3="-230.277777777778,98.5" />
+                  <mssgle:LineSegment
+                    End="-230.277777777778,181.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC DimCountry load\DFT Load DimCountry.Paths[NewCountry]"
+          TopLeft="418.125,579.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,76.7500000000001"
+              Start="0,0"
+              End="0,69.2500000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.2500000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.55193359375,28.9179687500001,55.1038671875,11.4140625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
