@@ -7,15 +7,110 @@
   DTS:CreatorName="SARATOV\Andrey_Potapov"
   DTS:DTSID="{969EBF95-7346-451B-8763-2A05562D8C92}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Transform_Country"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{52B825BE-2642-42BE-871C-03B603AA2501}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{293C6C25-D66B-4C04-8394-CADE2782A5EB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="CrimeStatDWH"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{FFBB8AD1-7A45-4CA5-BF5C-D39CF7DC6957}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{FFBB8AD1-7A45-4CA5-BF5C-D39CF7DC6957}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\SEQC Load data to staging"
@@ -27,6 +122,8 @@
       DTS:ObjectName="SEQC Load data to staging"
       DTS:TransactionOption="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC Load data to staging\DFT Load from File to staging Country_typed"
@@ -38,6 +135,8 @@
           DTS:ObjectName="DFT Load from File to staging Country_typed"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -758,6 +857,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SEQC Preparation">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC Preparation\SQLT truncate staging Country_typed"
@@ -769,6 +870,8 @@
           DTS:ObjectName="SQLT truncate staging Country_typed"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A251AAF3-BD7A-44B1-A889-8D897719A5E8}"
@@ -799,7 +902,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="291,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging Country_typed"
@@ -827,7 +930,7 @@
           TopLeft="290.765872896934,223">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,47.647061483257"
               Start="0,0"
               End="0,40.147061483257">

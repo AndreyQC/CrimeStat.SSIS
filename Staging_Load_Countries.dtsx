@@ -7,12 +7,12 @@
   DTS:CreatorName="SARATOV\Andrey_Potapov"
   DTS:DTSID="{F900BD6B-636E-41AF-A5E6-B17D6BD0C163}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Load_Countries"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{A7E15050-28A3-42A1-AAB5-E7F49D468D7A}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{4740EDB0-8FA6-4825-BADA-FA7066A776E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\TST\CrimeStat.Source.Countries\ISOcountries.csv">
+          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.Countries\ISOcountries.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,6 +138,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="CrimeStatDWH"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{9F695C4D-58C5-4120-A86C-1932EB590E92}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -149,6 +161,89 @@
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{9F695C4D-58C5-4120-A86C-1932EB590E92}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\SEQC Load data to staging"
@@ -160,6 +255,8 @@
       DTS:ObjectName="SEQC Load data to staging"
       DTS:TransactionOption="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC Load data to staging\DFT Load from File to staging Country_untyped"
@@ -171,6 +268,8 @@
           DTS:ObjectName="DFT Load from File to staging Country_untyped"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -803,6 +902,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SEQC Preparation">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC Preparation\SQLT truncate staging Country_untyped"
@@ -814,6 +915,8 @@
           DTS:ObjectName="SQLT truncate staging Country_untyped"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A251AAF3-BD7A-44B1-A889-8D897719A5E8}"
@@ -846,25 +949,25 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="303.2,41.6"
+          Size="303,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging Country_untyped"
           TopLeft="55.6031741706693,50.4836599972559" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="430.4,156.8"
-          Size="430.4,200"
+          PanelSize="430,157"
+          Size="430,200"
           Id="Package\SEQC Load data to staging"
           TopLeft="97.6190481272414,365.03268227436" />
         <NodeLayout
-          Size="268,41.6"
+          Size="268,42"
           Id="Package\SEQC Preparation\SQLT truncate staging Country_untyped"
           TopLeft="83,22" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="460.8,120"
-          Size="460.8,163.2"
+          PanelSize="461,120"
+          Size="461,163"
           Id="Package\SEQC Preparation"
           TopLeft="81.5873023333733,154.385620791103" />
         <EdgeLayout
@@ -892,7 +995,7 @@
         <AnnotationLayout
           Text="Staging_Load_Countries"
           ParentId="Package"
-          Size="244.8,48.8"
+          Size="245,48"
           Id="ca3baa1f-686e-45a8-b8c1-d25982acd3d0"
           TopLeft="182.809524555595,35.2549044965824">
           <AnnotationLayout.FontInfo>

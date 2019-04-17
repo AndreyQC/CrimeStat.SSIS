@@ -7,12 +7,12 @@
   DTS:CreatorName="SARATOV\Andrey_Potapov"
   DTS:DTSID="{36A86EB8-26B8-418E-A47B-4C8F9F8E5B53}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Load_WorldBank"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{35776710-2BE1-4CE1-8F36-5915649F7889}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{199308E8-6E9A-4CEB-A7C1-241BF6C85202}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\TST\CrimeStat.Source.WorldBank\WorldBankPopulation.csv">
+          DTS:ConnectionString="\\ECSC00A014AD\shared\CrimeStat.ETL.WorkFolder\DEV\CrimeStat.Source.WorldBank\WorldBankPopulation.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -615,6 +615,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="CrimeStatDWH"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{9CE46A5C-8F9B-43F0-86A2-6E0B639907C7}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -636,6 +648,89 @@
         xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{9CE46A5C-8F9B-43F0-86A2-6E0B639907C7}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\SEQC Load data to staging"
@@ -647,6 +742,8 @@
       DTS:ObjectName="SEQC Load data to staging"
       DTS:TransactionOption="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_untyped"
@@ -658,6 +755,8 @@
           DTS:ObjectName="DFT Load from File to staging WorldBankPopulation_untyped"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -3372,6 +3471,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SEQC Preparation">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\SEQC Preparation\SQL truncate staging WorldBankPopulation_untyped"
@@ -3383,6 +3484,8 @@
           DTS:ObjectName="SQL truncate staging WorldBankPopulation_untyped"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A251AAF3-BD7A-44B1-A889-8D897719A5E8}"
@@ -3415,25 +3518,25 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="366.4,41.6"
+          Size="366,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_untyped"
           TopLeft="34.6031741706693,50.4836599972559" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="430.4,156.8"
-          Size="430.4,200"
+          PanelSize="430,157"
+          Size="430,200"
           Id="Package\SEQC Load data to staging"
           TopLeft="69.8412703494636,294.921571163249" />
         <NodeLayout
-          Size="324.8,41.6"
+          Size="325,42"
           Id="Package\SEQC Preparation\SQL truncate staging WorldBankPopulation_untyped"
           TopLeft="58,28" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="460.8,120"
-          Size="460.8,163.2"
+          PanelSize="461,120"
+          Size="461,163"
           Id="Package\SEQC Preparation"
           TopLeft="55.8095245555955,83.2745096799916" />
         <EdgeLayout
@@ -3461,7 +3564,7 @@
         <AnnotationLayout
           Text="Staging_Load_WorldBank"
           ParentId="Package"
-          Size="256.8,48.8"
+          Size="257,48"
           Id="348ee4b2-2ea1-491a-8f43-eb0833b451e6"
           TopLeft="135.809524555595,29.921571163249">
           <AnnotationLayout.FontInfo>
