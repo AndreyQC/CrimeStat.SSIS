@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Transform_UNCrime"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{F8FBE27E-E8C3-466C-AD85-B0D912A73B54}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{73854B41-22C1-4F4D-9127-F80DCE53B699}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -749,15 +749,55 @@
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC Transform source table Staging_UNCrime_untyped"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{c8797bb2-54d2-4db0-9548-076ab530cccb}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC Transform source table Staging_UNCrime_untyped">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Transform source table Staging_UNCrime_untyped\SQL Update Staging_UNCrime_untyped"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f736d843-98db-4184-afe5-7bf4a4590998}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Update Staging_UNCrime_untyped"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A251AAF3-BD7A-44B1-A889-8D897719A5E8}"
+              SQLTask:SqlStatementSource="UPDATE [staging].[UNCrime_untyped]&#xA;   SET &#xA;     [Count] = REPLACE( [Count], [Count],TRIM(REPLACE(REPLACE([Count],'-','0'), ',','')))&#xA;      ,[Rate] = REPLACE( [Rate], [Rate],TRIM(REPLACE(REPLACE([Rate],'-','0'), ',','')))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{559693e8-0330-4bd2-8892-bfd9aae12f6e}"
+      DTS:DTSID="{71B1D7EE-26F4-42F1-8CBE-F47B35E5671C}"
       DTS:From="Package\SEQC Preparation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
+      DTS:To="Package\SEQC Transform source table Staging_UNCrime_untyped" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B4C8BE05-9D55-4D6D-A4EE-DD600EE81C58}"
+      DTS:From="Package\SEQC Transform source table Staging_UNCrime_untyped"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
       DTS:To="Package\SEQC Load data to staging" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -771,18 +811,18 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="291,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed"
-          TopLeft="55.6031741706693,50.4836599972559" />
+          TopLeft="70.6031741706693,24.4836599972559" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="430,157"
-          Size="430,200"
+          PanelSize="444,90"
+          Size="444,133"
           Id="Package\SEQC Load data to staging"
-          TopLeft="84.0317457938681,351.647061483257" />
+          TopLeft="163,428.647061483257" />
         <NodeLayout
           Size="268,42"
           Id="Package\SEQC Preparation\SQLT truncate staging UNCrime_typed"
@@ -790,24 +830,57 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="461,120"
-          Size="461,163"
+          PanelSize="440,76"
+          Size="440,119"
           Id="Package\SEQC Preparation"
-          TopLeft="68,141" />
+          TopLeft="163,80" />
+        <NodeLayout
+          Size="265,42"
+          Id="Package\SEQC Transform source table Staging_UNCrime_untyped\SQL Update Staging_UNCrime_untyped"
+          TopLeft="83,18" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="444,89"
+          Size="444,132"
+          Id="Package\SEQC Transform source table Staging_UNCrime_untyped"
+          TopLeft="163,248.647061483257" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="298.765872896934,304">
+          TopLeft="384,199">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,47.647061483257"
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.6470614832569"
               Start="0,0"
-              End="0,40.147061483257">
+              End="0,42.1470614832569">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.147061483257" />
+                    End="0,42.1470614832569" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="385,380.647061483257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -821,7 +894,7 @@
           ParentId="Package"
           Size="288,48"
           Id="4fbd85f3-756c-4195-bcdd-88764cd844e4"
-          TopLeft="171,65.6470614832569">
+          TopLeft="243,1.64706148325691">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -842,13 +915,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="243,42"
-          Id="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLESRC staging UNCrime_untyped"
-          TopLeft="162,102" />
-        <NodeLayout
           Size="231,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLEDST staging UNCrime_typed"
           TopLeft="166,206" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed\OLESRC staging UNCrime_untyped"
+          TopLeft="162,102" />
         <EdgeLayout
           Id="Package\SEQC Load data to staging\DFT Load from File to staging UNCrime_typed.Paths[OLE DB Source Output]"
           TopLeft="282.5,144">

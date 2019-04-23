@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Transform_WorldBank"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{8E0810C0-E78B-487B-9ECF-D57A425DE9FE}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{C14835DB-312E-49C2-AB91-D0C038D2D6E3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -259,34 +259,10 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
-                          dataType="wstr"
-                          length="255"
-                          name="CountryName" />
-                        <externalMetadataColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
-                          dataType="wstr"
-                          length="255"
-                          name="CountryCode" />
-                        <externalMetadataColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorName]"
-                          dataType="wstr"
-                          length="255"
-                          name="IndicatorName" />
-                        <externalMetadataColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorCode]"
-                          dataType="wstr"
-                          length="255"
-                          name="IndicatorCode" />
-                        <externalMetadataColumn
                           refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
                           dataType="wstr"
                           length="255"
                           name="Year" />
-                        <externalMetadataColumn
-                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorValue]"
-                          dataType="i8"
-                          name="IndicatorValue" />
                         <externalMetadataColumn
                           refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[sysETLrunId]"
                           dataType="i4"
@@ -307,6 +283,30 @@
                           refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[sysChangedBy]"
                           dataType="i4"
                           name="sysChangedBy" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          dataType="wstr"
+                          length="255"
+                          name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="CountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorName]"
+                          dataType="wstr"
+                          length="255"
+                          name="IndicatorName" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="IndicatorCode" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_pivoted\OLEDTS staging WorldBankPopulation_unpivoted.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorValue]"
+                          dataType="i8"
+                          name="IndicatorValue" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -5982,15 +5982,15 @@
     design-time-name="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="290,42"
-          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed"
-          TopLeft="32,154" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="243,42"
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLESRC staging WorldBankPopulation_untyped"
           TopLeft="60,60" />
+        <NodeLayout
+          Size="290,42"
+          Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed\OLEDST staging WorldBankPopulation_typed"
+          TopLeft="32,154" />
         <EdgeLayout
           Id="Package\SEQC Load data to staging\DFT Load from File to staging WorldBankPopulation_typed.Paths[OLE DB Source Output]"
           TopLeft="179.25,102">
@@ -6010,7 +6010,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6048,47 +6050,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="290,42"
-          Id="Package\TEST PIVOT\OLESRC staging WorldBankPopulation_typed"
-          TopLeft="59,60" />
-        <NodeLayout
           Size="102,42"
           Id="Package\TEST PIVOT\Pivot"
           TopLeft="141,147" />
-        <EdgeLayout
-          Id="Package\TEST PIVOT.Paths[OLE DB Source Output]"
-          TopLeft="204,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-12,45"
-              Start="0,0"
-              End="-12,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="-4,22.5" />
-                  <mssgle:LineSegment
-                    End="-8,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8,22.5"
-                    Point2="-12,22.5"
-                    Point3="-12,26.5" />
-                  <mssgle:LineSegment
-                    End="-12,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="290,42"
+          Id="Package\TEST PIVOT\OLESRC staging WorldBankPopulation_typed"
+          TopLeft="59,60" />
         <NodeLayout
           Size="121,42"
           Id="Package\TEST PIVOT\Union All"
@@ -6126,6 +6094,42 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-19.75,60,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TEST PIVOT.Paths[OLE DB Source Output]"
+          TopLeft="204,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-12,45"
+              Start="0,0"
+              End="-12,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
+                  <mssgle:LineSegment
+                    End="-8,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8,22.5"
+                    Point2="-12,22.5"
+                    Point3="-12,26.5" />
+                  <mssgle:LineSegment
+                    End="-12,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
